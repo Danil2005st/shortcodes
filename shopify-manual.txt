@@ -1,0 +1,342 @@
+Шопифай
+https://accounts.shopify.com/login  -создавать новый магазин
+http://prntscr.com/fwm0gf
+http://prntscr.com/fwm0mo
+http://implementation.w3.ua/shopify/excerpt/test-accounts/
+http://implementation.w3.ua/shopify/  Наши тулзы
+Шопифай fix
+///-------------------------- Не работает сортировка
+не работает сортировка https://s3.amazonaws.com/scrstorage/i6975331q36e1688.jpg
+[06.07.2017 13:14:58] Michael Bezdetniy: измени значение name на sort_by
+<script>
+    Shopify.queryParams = {};
+    if (location.search.length) {
+      for (var aKeyValue, i = 0, aCouples = location.search.substr(1).split('&'); i < aCouples.length; i++) {
+        aKeyValue = aCouples[i].split('=');
+        if (aKeyValue.length > 1) {
+          Shopify.queryParams[decodeURIComponent(aKeyValue[0])] = decodeURIComponent(aKeyValue[1]);
+        }
+      }
+    }
+    jQuery('#sort-by')
+      .val('{{ collection.sort_by | default: collection.default_sort_by }}')
+      .bind('change', function() {
+      Shopify.queryParams.sort_by = jQuery(this).val();
+      location.search = jQuery.param(Shopify.queryParams).replace(/\+/g, '%20');
+    });
+  </script>
+[06.07.2017 13:17:09] Michael Bezdetniy: добавь в этот див после селекта
+[06.07.2017 13:17:30] Michael Bezdetniy: и измени id на sort-by на селекте ну или в джсе пропиши существующий
+///--------------------------Обернуть что-то в html тег
+[04.07.2017 12:48:14] Khaenkovskaya Oksana: https://s3.amazonaws.com/scrstorage/l5t2p3f66p80095297.jpg Миша как мне эту ерунду тут в стронг обернуть?
+[04.07.2017 12:53:05] Michael Bezdetniy: http://screen.w3.ua/Jul17/9674511.jpg
+открой и закрой внутри кавычек
+///--------Подключить сыы для мобил
+<script type="text/javascript">
+    var pathInfo = {
+      base: '{{ basePath }}/',
+      css: '',
+      js: '',
+      swf: '',
+    }
+  </script>
+////---------Убрать в цене лишнее
+{{ product.price | money | remove: '.00' }}
+/////---------перебрать коллекции и есть есть такая с таким дополнением то делать 
+{% capture collection_soldout_handle %}{{ collection.handle }}-in-stock{% endcapture %}
+    {% assign collection_soldout = collections[collection_soldout_handle] %}
+    {% if collection_soldout != blank %}
+      <li class="stock-filter">
+        <a href="{{ collection.url | append: '-in-stock' }}" class=" un-check {% if collection.url contains '-in-stock' %}hidden{% endif %}">Hide Sold Out Items</a>
+        <a href="{{ collection.url | remove: '-in-stock' }}" class=" check {% if collection.url contains '-in-stock' %}show{% endif %}">Hide Sold Out Items</a>
+      </li>
+    {% endif %}
+////------ 
+<script>
+    Shopify.queryParams = {};
+    if (location.search.length) {
+      for (var aKeyValue, i = 0, aCouples = location.search.substr(1).split('&'); i < aCouples.length; i++) {
+        aKeyValue = aCouples[i].split('=');
+        if (aKeyValue.length > 1) {
+          Shopify.queryParams[decodeURIComponent(aKeyValue[0])] = decodeURIComponent(aKeyValue[1]);
+        }
+      }
+    }
+    console.log(Shopify.queryParams);
+  </script>
+Шопифай наши проекты
+http://devmarkup.com/dev-5cd74beb85f3061c2a27fb26d1b80a97-all.html
+http://devmarkup.com/dev-12cc0b0333cf17f9596264e512bdf8ac-all.html
+http://devmarkup.com/dev-b2479ab415d3be37f273f88698d0bea8-all.html
+http://devmarkup.com/dev-15d70e7fbc292a6309074fc7c940bca9-all.html
+http://devmarkup.com/dev-f81d9afb4347ae951d34da3887cfe724-all.html
+Шопифай полезные линки
+https://github.com/sergeybelyaev - Сережин Git
+https://help.shopify.com/themes/liquid/objects  описание объектов 
+https://help.shopify.com/themes/development/theme-editor/settings-schema  теги для settings
+http://implementation.w3.ua/shopify/theme-code/code-examples/
+https://help.shopify.com/themes/customization/products/features/add-color-swatches - для опций товара в виде радиобатонов
+Скрывает те опции, которые не совпадают
+https://gist.github.com/carolineschnapp/18c5a74eeb953c7e3d92
+https://08left.com/products/abi-abilene?variant=48051368207&nopreview
+https://help.shopify.com/themes/customization/products/variants/link-product-options-in-menus  - для селекта
+http://lmgtfy.com/?q=gulp+ftp+deploy
+https://shopify.github.io/liquid/filters/divided_by/  
+https://help.shopify.com/themes/customization/products/get-customization-information-for-products
+http://cheat.markdunkley.com/ 
+https://help.shopify.com/manual/using-themes/change-the-layout/theme-newsletter#add-a-mailchimp-newsletter-form-to-your-store-non-sectioned-themes-specific
+http://kb.mailchimp.com/lists/signup-forms/add-a-signup-form-to-your-website - маилчип
+https://s3.amazonaws.com/scrstorage/2691o4l8siw6ob87b145.jpg  okhaenkovskaya NEppYhYj8z%
+https://turbo-theme.myshopify.com/collections/tops/products/lily-yoga-tank?variant=19341340999  
+https://s3.amazonaws.com/scrstorage/1p15321k66h7dfm19956.jpg  *---экспорт продуктов
+http://instagram.pixelunion.net/  --- создать токен для инстаграмма
+https://s3.amazonaws.com/scrstorage/o4184u763s79313d1.jpg  -powershall
+1704722190.1677ed0.a4c988826faa4eb297cf9affcbcae4da   ---- код для шопифая инстаграмма
+https://help.shopify.com/themes/customization/products/add-to-cart/stay-on-product-page-when-items-added-to-cart#edit-your-theme-code - чтоб оставаться на продукте 
+https://ecommerce.shopify.com/c/ecommerce-design/t/api-js-events-29975 - события шопифая
+https://shopify.github.io/themekit/commands/#watch 
+Шопифай Apps
+https://apps.shopify.com/metafields-editor
+https://apps.shopify.com/power-tools-filter-menu
+https://apps.shopify.com/instafeed  http://instagram.pixelunion.net/
+https://apps.shopify.com/covet-pics?reveal_new_review=true&ref=sqr-app-covet
+Шопифай Перед QA
+ДОбавить пользователя
+Обязательно включай эту опцию https://scrstorage.s3.amazonaws.com/17-05-16-er3q5.jpg
+иначе нельзя будет создать аккаунт
+http://screen.w3.ua/Apr17/16979211.jpg   тут пароль от страничек
+ДОбавить способы оплаты
+http://screen.w3.ua/Aug17/4740277.jpg
+http://screen.w3.ua/Aug17/4706472.jpg
+На подстаил
+https://prokopenko.myshopify.com/cart
+https://prokopenko.myshopify.com/404
+https://prokopenko.myshopify.com/account/login
+https://prokopenko.myshopify.com/account/register
+https://s3.amazonaws.com/scrstorage/245f481g1w4phe3595.jpg проверить отправку писем
+Mail chimp
+user: cmstestcmstest
+passw: Cmstestcms_123
+ action="//website.us3.list-manage.com/subscribe/post?u=d76995a5e0497c88550e2f3f2&amp;id=b874423e03"
+<div class="container">
+  <div class="box-email">
+    {% if settings.newsletter-form-url != blank %}
+    <div class="form-signup">
+      <form action="{{ settings.newsletter-form-url }}" method="post" class="custom-email-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+        {% if section.settings.title != blank %}
+          <h2>{{ section.settings.title }}</h2>
+        {% endif %}
+        <div class="row">
+          <input type="email" name="EMAIL" class="required form-control" placeholder="{{ 'general.newsletter_form.email_placeholder' | t }}">
+          <button type="submit" name="subscribe" class="btn-submit"></button>
+        </div>
+      </form>
+    </div>
+    {% else %}
+    <div class="form-signup">
+      {% form 'customer' %}
+        {% if section.settings.title != blank %}
+          <h2>{{ section.settings.title }}</h2>
+        {% endif %}
+        {{ form.errors | default_errors }}
+        {% if form.posted_successfully? %}
+          <p class="form--success">{{ 'general.newsletter_form.confirmation' | t }}</p>
+        {% else %}
+          <div class="input-group password__input-group row">
+            <input type="hidden" name="contact[tags]" value="newsletter">
+            <input type="email"
+              name="contact[email]"
+              id="Email"
+              class="input-group__field newsletter__input"
+              value="{% if customer %}{{ customer.email }}{% endif %}"
+              placeholder="{{ 'general.newsletter_form.email_placeholder' | t }}"
+              autocorrect="off"
+              autocapitalize="off">
+            <button type="submit" name="commit" class="btn-submit"></button>
+          </div>
+        {% endif %}
+      {% endform %}
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Newsletter",
+    "class": "section-signup alt",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Sign up for our Newsletter!"
+      }
+    ],
+    "presets": [{
+      "name": "Newsletter",
+      "category": "Promotional"
+    }]
+  }
+{% endschema %}
+это секция
+newsletter.liquid
+  {
+    "name": "MailChimp",
+    "settings": [
+      {
+        "type": "text",
+        "id": "newsletter-title",
+        "label": "Title",
+        "default": "Sign up for our Newsletter!"
+      },
+      {
+        "type": "text",
+        "id": "newsletter-form-url",
+        "label": "MailChimp form action URL",
+        "info": "[Find your MailChimp form action URL](https:\/\/help.shopify.com\/manual\/using-themes\/change-the-layout\/theme-newsletter#add-a-mailchimp-newsletter-form-to-your-store-non-sectioned-themes-specific)"
+      }
+    ]
+  },
+это в settings_schema.json
+function initMailchimpSend() {
+  jQuery('.custom-email-form').not('.initialized').each(function() {
+      var block = jQuery(this).addClass('initialized');
+      block.each(function() {
+        var form = jQuery(this);
+        var redirectInput = form.find('[name="redirect_url"]');
+        var message = jQuery('<div class="message"></div>');
+        message.appendTo(form);
+        function submitHandler(e) {
+            e.preventDefault();
+            message.removeClass('success');
+            message.removeClass('error');
+            jQuery.ajax({
+              type    : form.attr('method'),
+              url    : form.attr('action').replace('/post?', '/post-json?').concat('&c=?'),
+              data    : form.serialize(),
+              timeout   : 5000,
+              cache       : false,
+              dataType    : 'jsonp',
+              contentType : "application/json; charset=utf-8",
+              error       : function(err) {  },
+              success     : function(data) {
+                if (data.result === "success") {
+                  // It worked, carry on...
+                  if(redirectInput && redirectInput.length){
+                    window.location.replace(redirectInput.val());
+                  }else {
+                    message.addClass('success').html(data.msg);
+                  }
+                } else {
+                  // mailchimp returned error, check data.msg
+                  var index = data.msg.indexOf('0 - ');
+                  var messageText;
+                  if(index > -1){
+                    messageText = data.msg.replace('0 - ', '');
+                  }else {
+                    messageText = data.msg;
+                  }
+                  message.addClass('error').html(messageText);
+                }
+              }
+            });
+        }
+        form.on('submit', submitHandler);
+     });
+  });
+}
+это в джс
+Шопифай Prokopenko
+Почта shopify2017prokopenko@gmail.com  shopifyNEppYhYj8z
+https://prokopenko.myshopify.com/admin/auth/login
+shopify2017prokopenko@gmail.com
+prokopenko
+  
+https://accounts.shopify.com 
+shopify2017prokopenko@gmail.com shopifyNEppYhYj8z
+https://partner-training.shopify.com/my_courses
+http://prntscr.com/hau3eg
+https://www.skillshare.com/classes/Advanced-Shopify-Theme-Development/708093439?via=search-layout-grid
+https://www.skillshare.com/classes/Shopify-Essentials-for-Web-Developers-From-Store-Setup-to-Custom-Themes/1070001866?via=search-layout-grid
+https://demo77777.myshopify.com/admin  shopifydemoadmn@gmail.com / cftred41
+PowerShall сменить дерикторию Set-Location -Path D:\svn\markup\EvgeniaOctober
+Стянула линки 
+инфа по ШОПИФАЮ
+———————————— implementation.w3.ua - вики имплементаторов
+http://implementation.w3.ua/shopify/excerpt/test-accounts/
+с чего начать тут
+
+http://implementation.w3.ua/shopify/
+
+1 - создать тестовую тему
+2 - полазить по админке, потыкать в коллекции и продукты, создать менюшки
+3 - вспомнить, где находится редактор темплейтов, посмотреть структуру файлов
+4 - попробовать запилить темку
+
+
+https://shopify.github.io/liquid/basics/introduction/ шпаргалка по элементам кода, которые используются в шопе тут
+
+
+https://help.shopify.com/manual/intro-to-shopify тут глобально вся инфа по шопифаю
+http://shopify.github.io/Timber
+http://cheat.markdunkley.com/
+https://help.shopify.com/themes/liquid/basics
+https://www.shopify.ca/partners/shopify-cheat-sheet
+https://help.shopify.com/themes/development/templates
+Гайд как сделать экспорт Шопифая:
+
+1 - https://scrstorage.s3.amazonaws.com/10-39-49-erefy.png
+2 - https://scrstorage.s3.amazonaws.com/10-40-57-tph1w.png
+3 - https://scrstorage.s3.amazonaws.com/10-43-42-f81fj.png
+4 - пойти на почту админа, собрать архивы, отправленные с шопиая (архив с темой и файл экспорт продуктов) и прислать это нам
+
+DEMO https://satterfield-pfeffer5655.myshopify.com/blogs/news
+
+
+АПДЕЙТ КУПЛЕННЫХ ТЕМ
+http://support.pixelunion.net/article/244-updating-your-shopify-theme
+https://help.shopify.com/manual/using-themes/updating-themes
+
+
+WHOLESALE
+https://www.envision.io/blogs/ecommerce-pulse/80312001-how-to-add-a-wholesale-area-to-your-shopify-store-without-an-app
+http://aeolidia.com/wholesale-accounts-on-shopify/
+https://www.shopify.com/partners/blog/85596038-how-to-design-a-wholesale-solution-for-an-ecommerce-store
+https://wemakewebsites.com/blog/handle-wholesale-using-shopify
+https://www.blackbeltcommerce.com/add-tag-customer-account-registration-form-shopify/
+
+
+FILTERS BY TAGS
+https://help.shopify.com/themes/customization/collections/filtering-a-collection-with-multiple-tag-drop-down
+
+
+Applications
+
+https://apps.shopify.com/custom-fields-2
+https://apps.shopify.com/metafields2
+
+Создать новый тестовый магаз
+
+1. https://app.shopify.com/services/partners
+2. https://app.shopify.com/services/partners/dev_shops create new store
+
+-----
+http://screen.w3.ua/May16/355095312.jpg - Создаем тестовые магазины в формате demo12345 , где 12345 – уникальное 5-значное число, последние 5 цифр номер ордера, магазин называем – demo23412 >>>> http://screen.w3.ua/May16/355132140.jpg
+
+http://screen.w3.ua/May16/355065718.jpg - cftred41
+-----
+
+
+3. http://screen.w3.ua/May16/355722187.jpg
+
+тестовый акк - http://screen.w3.ua/Jun16/197012843.jpg http://screen.w3.ua/Jun16/197055031.jpg
+http://shopify-themes.spur-i-t.com/ecommerce-website-design/shopify-templates/view/Tools-shopify-theme
+
+Anyone can easily sell online with Shopify
+Shopify is an ecommerce platform that allows anyone to very easily sell online. It is in our opinion the best designed cloud hosted ecommerce solution on the market. The competitive price plans make Shopify a quick, easy and affordable choice for your online business.
+
+
+why shopify?
+
+Shopify is the best hosted ecommerce platform on the market. With 24/7 support, competitive price plans, advanced reporting, modern and on-trend themes, not to mention continuous updates.
+Excellent customer management system, making managing your orders, customers, products & theme super easy! Built in SEO means optimisted URLS are already created for you with the added ability to edit the title & meta description.Dozens of payment gateways available to integrate straight into your Shopify Store - making accepting payments easy.A fully stocked app store, full of plug ins with additional features to help make your store that extra bit special. From marketing to google shopping, the app store has it all.
