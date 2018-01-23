@@ -1,0 +1,31 @@
+<div class="paging-wrapping">
+    {% if collection %}
+      {% assign collection_pagination = collection %}
+
+      {% elsif product.collections.first != blank %}
+
+      {% assign collection_pagination = product.collections.first %}
+
+    {% endif %}
+
+    {% if collection_pagination.products.size > 1 and collection_pagination.products.size < 51 %}
+        {% for current_product in collection_pagination.products %}
+            {% assign index = forloop.index0 %}
+            {% assign next_index = forloop.index %}
+
+            {% if index > 0 %}
+                {% assign prev_index = index | minus: 1 %}
+            {% endif %}
+
+            {% if current_product.title == product.title %}
+                {% assign prev_prod_url = collection_pagination.products[prev_index].url %}
+                {% assign next_prod_url = collection_pagination.products[next_index].url %}
+                {% break %}
+            {% endif %}
+        {% endfor %}
+          <div class="section-paging">
+            {% if prev_index != blank %}<a class="prev" href="{{ prev_prod_url }}"><i class="arrow-left"></i>Previous Issue</a>{% endif %}
+            {% if next_prod_url != blank %}<a class="next" href="{{ next_prod_url }}">Next Issue<i class="arrow-right"></i></a>{% endif %}
+          </div>
+    {% endif %}
+  </div>

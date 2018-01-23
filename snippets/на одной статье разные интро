@@ -1,0 +1,50 @@
+{% for block in section.blocks %}
+  {% assign page_handle = block.settings.handle | split: '/' | last %}
+  {% if block.settings.enable and handle == page_handle %}
+	<section class="intro viewport small-indents">
+        <div class="slideset">
+            <div class="slide">
+                <div class="bg-cover">
+                    <img src="{{ block.settings.image | img_url: '1366x451' }}" alt="image description">
+                </div>
+                <div class="jumbotron">
+                  <div class="container">
+                    <span class="sub-title">{{ blog.title }}</span>
+                    <h1>{{ article.title }}</h1>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  {% endif %}
+{% endfor %}
+{% schema %}
+  {
+    "name": "Into Sections",
+    "class": "intro",
+    "blocks": [
+	  {
+        "type": "intro",
+        "name": "Intro",
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "enable",
+            "label": "Enable",
+		  	"default": true
+          },
+		  {
+            "type": "article",
+            "id": "handle",
+            "label": "Enable for article"
+          },
+		  {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

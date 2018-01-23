@@ -1,0 +1,51 @@
+ {% if vendors == true or product.description != blank or  product.metafields.sf_product_descripti.additional_info != blank %}
+      <ul class="tab-content">
+        {% if product.description != blank %}
+          <li id="tab1-0">
+            <a href="#" class="opener">{{ 'products.product.details' | t }}</a>
+            <div class="slide"  itemprop="description">
+				{{ product.description }}
+            </div>
+          </li>
+        {% endif %}
+              {% for i in (1..20) %}
+                {% capture vendor_name %}vendor_name_name_{{ i }}{% endcapture %}
+                {% capture vendor_text %}vendor_name_processing_time_{{ i }}{% endcapture %}
+                {% if shop.metafields.sf_product_informati[vendor_name]  == product.vendor %}
+        
+                    <li id="tab2-0">
+                    <a href="#" class="opener">{{ 'products.product.processing_time' | t }}</a>
+                    <div class="slide">
+                           {{ shop.metafields.sf_product_informati[vendor_text] }}
+                     </div>
+                  </li>
+                {% endif %}
+              {% endfor %}
+            
+        {% if product.metafields.sf_product_descripti.additional_info != blank %}
+          <li id="tab3-0">
+            <a href="#" class="opener">{{ 'products.product.additional_info' | t }}</a>
+            <div class="slide">
+              {% assign my_value = product.metafields.sf_product_descripti.additional_info %}
+              {% if my_value %}
+                  {{ my_value }}
+              {% endif %}
+            </div>
+          </li>
+        {% endif %}
+      </ul>
+    {% endif %}
+
+
+
+
+    {% if product.metafields.product contains 'product_name_2' %}
+    {% assign product_1 = all_products[product.metafields.product.product_name_2] %}
+  <a href="#" class="item">
+    <div class="product-image">
+      <img src="{{ product_1.featured_image | img_url: 'medium' }}" alt="image description">
+            
+    </div>
+    <span class="prod-name">{{ product_1.title }}</span>
+  </a>
+  {% endif %}
