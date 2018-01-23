@@ -1,0 +1,26 @@
+theme download
+theme watch --notify=/tmp/theme.update
+https://shopify.github.io/themekit/commands/#download
+
+
+
+BigBox -----------------------------------------------------
+
+
+
+демо --------
+
+theme configure --password=ecec988d97b206df96ad14f1dc99f54a --store=demo80154.myshopify.com --themeid=5144281132
+
+
+лив ---------
+
+theme configure --password=fde4ad8cd734fbb7776751cee2ad37cb --store=big-box-catering.myshopify.com --themeid=25200263210
+
+
+
+
+EvgeniaOctober --------------------------------------------------
+
+демо --------
+theme configure --password=9883787d95458e783f0d26abea2162e7 --store=demo23672.myshopify.com --themeid=14044725291
