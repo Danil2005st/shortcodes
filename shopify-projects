@@ -1,3 +1,4 @@
+Set-Location -Path F:\svn\markup\
 theme download
 theme watch --notify=/tmp/theme.update
 https://shopify.github.io/themekit/commands/#download
